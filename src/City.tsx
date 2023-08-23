@@ -10,20 +10,20 @@ type CityPropsType = {
 export const City = (props: CityPropsType) => {
 
     // пока это пропускам
-    // const mappedMoney = props.data.map((el: MoneyType, index) => (
-    //     <CurrentBankomat
-    //         key={index}
-    //         money={el}
-    //     />
-    // ))
-    const mappedMoney = props.data.map(el => {
+    const mappedMoney = props.data.map((el: MoneyType, index) => (
+         <CurrentBankomat
+             key={index}
+             money={el}
+         />
+     ))
+    /*const mappedMoney = props.data.map(el => {
         return (
             <div>
-                <span>{el.banknotes}</span>
-                <span>{el.value}</span>
+                <div>{el.banknotes}</div>
+                <div>{el.value}</div>
             </div>
         )
-    })
+    })*/
 
     return (
         <div>
@@ -47,6 +47,7 @@ const MapWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 30px;
+  
 `
 
 
@@ -61,6 +62,6 @@ const MapWrapper = styled.div`
 // yarn add @types/styled-components
 
 //3
-// Вроде все норм, ну точнее почти норм- дублирование-это грех. Хотелось бы от него избавиться.
+// Вроде все норм, ну точнее почти норм-дублирование-это грех. Хотелось бы от него избавиться.
 // И StyledComponents нам в этом отлично поможет, ведь он может принимать пропсы!
 // Как это сделать в документашке

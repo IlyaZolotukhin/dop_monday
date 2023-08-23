@@ -1,5 +1,6 @@
 import React from 'react';
 import {MoneyType} from "./App";
+import {S} from './_Styleds'
 
 type CurrentBankomatPropsType = {
     money: MoneyType
@@ -7,8 +8,10 @@ type CurrentBankomatPropsType = {
 export const CurrentBankomat = (props:CurrentBankomatPropsType) => {
 
     return (
-        <div>
-            {props.money.banknotes}
-        </div>
+            <S.Banknote color={props.money.banknotes === 'Dollars'? "forestgreen":"aqua"}>
+                <S.Name>{props.money.banknotes}</S.Name>
+                <S.Nominal>{props.money.value}</S.Nominal>
+            </S.Banknote>
     );
 };
+
